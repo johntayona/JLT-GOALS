@@ -1,25 +1,38 @@
+import { Link } from 'expo-router'
 import { View, Text, StyleSheet } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
 
-const Goals = () => {
+const Home = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>J L T G O A L S</Text>
-
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Text style={styles.title}>
+        J C D G O A L
+      </Text>
+      <Link style={styles.link} href="/goals">
+        View Your Goals
+      </Link>
+      <Link style={styles.link} href="/goals/create">
+        Add a New Goal
+      </Link>
+    </View>
   )
 }
-
-export default Goals
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 30,
+    alignItems: 'center'
   },
   title: {
-    fontSize: 24,
-    textAlign: 'center',
-    marginBottom: 30,
+    marginVertical: 40,
+    fontSize: 28,
+  },
+  link: {
+    marginVertical: 20,
+    padding: 16,
+    backgroundColor: '#21cc8d',
+    color: 'white',
+    borderRadius: 8,
   },
 })
+
+export default Home
